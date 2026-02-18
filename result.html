@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Election Results - Student Voting System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #004e92, #000428);
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #00264d;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .result-card {
+            background: white;
+            color: black;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .candidate-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .votes {
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 10px;
+            height: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            text-align: right;
+            padding-right: 5px;
+            color: white;
+            line-height: 20px;
+        }
+
+        .winner {
+            background: gold;
+            color: black;
+            text-align: center;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #00264d;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Student Online Election Results</h1>
+    <p>President Election 2026</p>
+</header>
+
+<div class="container">
+
+    <div class="winner">
+        🏆 Winner: Rahul Sharma
+    </div>
+
+    <!-- Candidate 1 -->
+    <div class="result-card">
+        <div class="candidate-name">Rahul Sharma</div>
+        <div class="votes">Votes: 250</div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 50%; background: green;">50%</div>
+        </div>
+    </div>
+
+    <!-- Candidate 2 -->
+    <div class="result-card">
+        <div class="candidate-name">Priya Verma</div>
+        <div class="votes">Votes: 180</div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 36%; background: blue;">36%</div>
+        </div>
+    </div>
+
+    <!-- Candidate 3 -->
+    <div class="result-card">
+        <div class="candidate-name">Arjun Kumar</div>
+        <div class="votes">Votes: 70</div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 14%; background: red;">14%</div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Student Online Voting System | All Rights Reserved
+</footer>
+
+</body>
+</html>

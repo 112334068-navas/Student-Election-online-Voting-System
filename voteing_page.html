@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Online Election - Voting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .candidate {
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #16305f;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+
+    <script>
+        function validateVote() {
+            var studentId = document.getElementById("studentId").value;
+            var candidates = document.getElementsByName("candidate");
+            var selected = false;
+
+            for (var i = 0; i < candidates.length; i++) {
+                if (candidates[i].checked) {
+                    selected = true;
+                    break;
+                }
+            }
+
+            if (studentId == "") {
+                alert("Please enter Student ID");
+                return false;
+            }
+
+            if (!selected) {
+                alert("Please select a candidate");
+                return false;
+            }
+
+            alert("Vote Submitted Successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cast Your Vote</h2>
+
+        <form onsubmit="return validateVote()">
+            
+            <label>Student ID:</label>
+            <input type="text" id="studentId" placeholder="Enter your Student ID">
+
+            <label>Select Candidate:</label>
+
+            <div class="candidate">
+                <input type="radio" name="candidate" value="Candidate1">
+                Candidate 1 - President
+            </div>
+
+            <div class="candidate">
+                <input type="radio" name="candidate" value="Candidate2">
+                Candidate 2 - President
+            </div>
+
+            <div class="candidate">
+                <input type="radio" name="candidate" value="Candidate3">
+                Candidate 3 - President
+            </div>
+
+            <button type="submit">Submit Vote</button>
+
+        </form>
+
+        <div class="footer">
+            © 2026 Student Election System
+        </div>
+    </div>
+
+</body>
+</html>

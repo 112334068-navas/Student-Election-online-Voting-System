@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Registration Confirmation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvet\ica, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 450px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 70px;
+            color: #28a745;
+        }
+
+        h1 {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .details-box {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .details-box span {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-home {
+            background-color: #1e3c72;
+            color: white;
+        }
+
+        .btn-home:hover {
+            background-color: #16325c;
+        }
+
+        .btn-print {
+            background-color: #28a745;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btn-print:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="success-icon">✔</div>
+        <h1>Registration Successful!</h1>
+        <p>Your candidature has been successfully submitted.</p>
+
+        <div class="details-box">
+            <p>Candidate Name: <span id="cName">John Doe</span></p>
+            <p>Department: <span id="cDept">Computer Science</span></p>
+            <p>Position Applied: <span id="cPosition">President</span></p>
+            <p>Registration ID: <span id="cID">EL2026-001</span></p>
+        </div>
+
+        <p>Please wait for admin approval.</p>
+
+        <a href="index.html" class="btn btn-home">Go to Home</a>
+        <button onclick="window.print()" class="btn btn-print">Print</button>
+    </div>
+
+</body>
+</html>

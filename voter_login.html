@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voter Login - Student Election System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 40px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 10px;
+            color: #1e3c72;
+        }
+
+        .login-container p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .show-password {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #1e3c72;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #16325c;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #2a5298;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h2>Voter Login</h2>
+    <p>Student Online Election Voting System</p>
+
+    <div id="error" class="error-message"></div>
+
+    <form id="loginForm">
+
+        <div class="input-group">
+            <label for="studentId">Student ID</label>
+            <input type="text" id="studentId" placeholder="Enter your Student ID">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your Password">
+            
+            <div class="show-password">
+                <input type="checkbox" onclick="togglePassword()"> Show Password
+            </div>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+
+    </form>
+
+    <div class="footer-links">
+        <p><a href="#">Forgot Password?</a></p>
+        <p>New voter? <a href="register.html">Register Here</a></p>
+    </div>
+
+</div>
+
+<script>
+    const form = document.getElementById("loginForm");
+    const errorDiv = document.getElementById("error");
+
+    // Demo credentials (for testing purpose)
+    const demoStudentId = "STU123";
+    const demoPassword = "12345";
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // prevent form submission
+
+        const studentId = document.getElementById("studentId").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        // Validation
+        if (studentId === "" || password === "") {
+            errorDiv.textContent = "All fields are required!";
+            return;
+        }
+
+        // Demo login check
+        if (studentId === demoStudentId && password === demoPassword) {
+            alert("Login Successful!");
+            window.location.href = "voter-dashboard.html";
+        } else {
+            errorDiv.textContent = "Invalid Student ID or Password!";
+        }
+    });
+
+    function togglePassword() {
+        const passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+</script>
+
+</body>
+</html>

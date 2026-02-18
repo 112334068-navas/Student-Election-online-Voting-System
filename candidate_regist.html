@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Registration - CSA DEPT STUDENT ELECTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2a5298;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #2a5298;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #2a5298;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1e3c72;
+        }
+
+        .message {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Candidate Registration</h2>
+
+        <form id="candidateForm">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Register Number</label>
+                <input type="text" id="regno" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Year</label>
+                <select id="year" required>
+                    <option value="">-- Select Year --</option>
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                </select>
+            </div>
+
+             <div class="form-group">
+                <label>Course</label>
+                <select id="Course" required>
+                    <option value="">-- Select course--</option>
+                    <option>BCA</option>
+                    <option>BSC.Computer Science</option>
+                    <option>BSC.Cyber security</option>
+                    <option>BSC.Data science</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Position Applying For</label>
+                <select id="position" required>
+                    <option value="">-- Select Position --</option>
+                    <option>Student Requirments committee Head</option>
+                    <option>Representatives union Head</option>
+                    <option>Student Sports Commitee Head</option>
+                    <option>Hostal students Committee Head</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Aadhar Number</label>
+                <input type="text" id="Aadharno" required>
+            </div>
+
+            <div class="form-group">
+                <label>Upload Photo</label>
+                <input type="file" id="photo" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+
+            <div class="message" id="message"></div>
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("candidateForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let regno = document.getElementById("regno").value.trim();
+            let department = document.getElementById("department").value;
+            let year = document.getElementById("year").value;
+            let position = document.getElementById("position").value;
+            let email = document.getElementById("email").value.trim();
+            let photo = document.getElementById("photo").files.length;
+            let manifesto = document.getElementById("manifesto").value.trim();
+
+            let message = document.getElementById("message");
+
+            if(name === "" || regno === "" || department === "" || 
+               year === "" || position === "" || email === "" || 
+               photo === 0 || manifesto === "") {
+
+                message.textContent = "All fields are required!";
+                message.className = "message error";
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

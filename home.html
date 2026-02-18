@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Online Election Voting System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+
+/* Header */
+        header {
+            background-color: #0f1c3f;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+/* Navigation Bar - Vertical */
+nav {
+    background-color: #ffffff;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 60px; /* Below header */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+    border-bottom: 3px solid rgba(0, 104, 145, 0.1);
+}
+
+nav a:hover {
+    background-color: #00d9ff;
+    color: black;
+}
+
+        /* Main Content */
+        .container {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .container h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        /* Start Button */
+        .start-btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            background-color: #60ce56;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            background-color: #0080cad0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f1c3f;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        CSA DEPT STUDENT ELECTION
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Election Rules</a>
+        <a href="candidate_regist.html">Candidate Registration</a>
+        <a href="voter_reg.html">voter Login</a>
+        <a href="voting_page.html">Vote</a>
+        <a href="voter_reg.html">Voter registration</a>
+        <a href="result.html">Election Result</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to CSA DEPT STUDENT ELECTION</h1>
+        <p>Secure • Transparent • Fast Voting System for Students</p>
+
+        <button class="start-btn" onclick="startElection()">Start Election</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 CSA DEPT FACULTY COMMITEE | All Rights Reserved
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function startElection() {
+            alert("Election Process Started!");
+            window.location.href = "about.html";
+        }
+    </script>
+
+</body>
+</html>
